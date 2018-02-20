@@ -1,0 +1,75 @@
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+</head>
+<body>
+<a-scene>
+
+    <!--camera controls-->
+        <a-camera universal-controls>
+            <a-entity cursor
+                      position="0 0 -1"
+                      geometry= "primitive: ring; radiusOuter :0.03; radiusInner: 0.02"
+                      material="color: red; shader: flat">
+
+            </a-entity>
+        </a-camera>
+
+
+    <!-- Exterior -->
+    <a-box id= "floor" src= "textures/wood.jpg"  position="-0.222 0 0" rotation="0 90 0"  geometry="depth:30;width:15;height:0"></a-box>
+    <a-box id="roof" src="textures/ceiling.jpg" position="0 5 0" rotation="0 90 0" geometry="depth:30;height:0;width:15"></a-box>
+    <a-box id= "north" src= "textures/walls.jpg" position="-14.99 2.464 -0.061" rotation="0 90 0" c geometry="depth:0;height:5;width:15"></a-box>
+    <a-box id= "east" src= "textures/walls.jpg" position="-0.33 2.454 -7.39"  geometry="width:30;depth:0;height:5"></a-box>
+    <a-box id= "south" src= "textures/walls.jpg" position="14.48 2.528 0.048" rotation="0 90 0" geometry="height:5;width:15;depth:0"></a-box>
+    <a-box id= "west" src= "textures/walls.jpg" position="-0.247 2.46 7.418" geometry="width:30;height:5;depth:0"></a-box>
+
+    <!-- Interior -->
+    <a-box id="large bedroom wall" src="textures/brick.jpg" position="-6.638 2.439 -2.371" rotation="0 90 0" geometry="depth:0.25;height:5;width:10"></a-box>
+    <a-box id="short bed wall" src="textures/brick.jpg" position="-6.58 2.507 6.374" rotation="0 90 0" geometry="depth:0.25;height:5;width:2"></a-box>
+    <!-- Kitchen bar -->
+    <a-box id= "bar top" src=" textures/granite.jpg" position="8.81 1.091 -4.136" rotation="90 0 90" geometry="depth:0.25;height:2.25;width:6.5" material=""></a-box>
+    <a-box id= "bar base" position="8.805 0.598 -4.172" src="textures/barBase.jpg" rotation="0 90 0" geometry="height:1.2;width:6.5;depth:0.25"></a-box>
+
+    <!--models-->
+    <a-gltf-model id="stove" src="objects/gas_stove/scene.gltf" position="12.853 1.323 -5.78" rotation="0 270 0" scale="0.05 0.05 0.05" gltf-model="objects/gas_stove/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="table" src="objects/low_poly_table/scene.gltf" position="-1.988 0.298 -2.62" scale="1 0.581 1" gltf-model="objects/low_poly_table/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="sofa" src="objects/couch/scene.gltf" position="-0.158 0.352 -0.678" rotation="0 -130.92085618739313 0" scale="1.75 1.75 1.75" gltf-model="objects/couch/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="bed" src="objects/bed/scene.gltf" position="-13.481 0.068 -4.21" scale="0.25 0.25 0.25" gltf-model="objects/bed/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="tv stand" src="objects/tv_cabinets_andersen/scene.gltf" position="-4.327 0.606 -5.236" rotation="0 -135.4472227689266 0" scale="0.002 0.002 0.002" gltf-model="objects/tv_cabinets_andersen/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="tv" src="objects/928c4eb3c875463bbde6fda85b7d8b3a/scene.gltf" position="-4.657 1.17 -5.463" rotation="0 44.80529957923038 0" scale="1.85 1.7 1.7" gltf-model="objects/928c4eb3c875463bbde6fda85b7d8b3a/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="desk" src="objects/modern_desk/scene.gltf" position="-7.423 0.03 -6.16" rotation="0 270 0" scale="0.025 0.025 0.025" gltf-model="objects/modern_desk/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="office chair" src="objects/office_chair/scene.gltf" position="-8.076 0.027 -5.236" rotation="0 180 0" scale="0.02 0.02 0.02" gltf-model="objects/office_chair/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="kitchen table" src="objects/table2/scene.gltf" position="11.638 0 5.531" rotation="0 90 0" scale="1.5 1.5 1.5" gltf-model="objects/table2/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="tank" src="objects/mz-042_cobra_tank/scene.gltf" position="6.226 0 5.928" rotation="0 270 0" scale="0.006 0.006 0.006" gltf-model="objects/mz-042_cobra_tank/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="sniper" src="objects/sci_fi_sniper_rifle/scene.gltf" position="8.555 1.187 -4.354" scale="0.001 0.001 0.001" gltf-model="objects/sci_fi_sniper_rifle/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="overwatch" src="objects/overwatch_logo/scene.gltf" position="2.785 2.484 -7.234" scale="0.25 0.25 0.25" gltf-model="objects/overwatch_logo/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="fridge" src="objects/smart_fridge/scene.gltf" position="13.753 0.062 0" rotation="0 270 0" scale="0.75 0.75 0.75" gltf-model="objects/smart_fridge/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="bookshelf" src="objects/bookshelf/scene.gltf" position="-14.394 1.696 2.583" rotation="0 90 0" scale="0.1 0.1 0.1" gltf-model="objects/bookshelf/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="cabinet" src="objects/cabinet/scene.gltf" position="14.172 -0.083 -0.002" rotation="0 270 0" scale="1.25 1.25 1.25" gltf-model="objects/cabinet/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="lights" src="objects/luminex_5863/scene.gltf" position="-0.442 4.033 4.037" scale="0.015 0.013 0.015" gltf-model="objects/luminex_5863/scene.gltf"></a-gltf-model>
+    <a-gltf-model id="painting" src="objects/scanned_oil_painting/scene.gltf" position="-6.857 2.816 0" rotation="11.229972784564136 -176.70018401834588 -90.1262611740785" scale="2 2 2" gltf-model="objects/scanned_oil_painting/scene.gltf"></a-gltf-model>
+
+    <!--sound model-->
+    <a-box id="sound" sound="on:click;src:sounds/Overwatch - Main Theme Short Fanfare.mp3" position="2.825 2.429 -7.239" scale="4.295 4.452 0.004" material="visible:false"></a-box>
+    <!--dynamic model-->
+    <a-box id="door" src="textures/door.jpg" position="-6.707 2.455 4.041" class="intersectacble" rotation="0 90 0" material="" geometry="height:5.1;width:2.75;depth:0">
+        <a-animation begin="click" attribute="position" from="-6.707 2.455 4.041" to= "-8.014 2.455 5.361" dur="1000"></a-animation>
+        <a-animation begin="click" attribute="rotation" from="0 90 0" to= "0 180 0" dur="1000"></a-animation>
+    </a-box>
+
+    <!--lights-->
+    <a-light id="emergencyLight" position="-0.5 4.297 4.114" rotation="-16.615776058793873 168.9079580045667 -9.625690958197831" light="type: spot; intensity:1"></a-light>
+
+    <a-light id="livingroomLight" position="2.746 4.802 0" scale="1 0 1"  light="type:hemisphere; intensity: 1"></a-light>
+
+    <!--light switches-->
+    <a-box id="off" event-set__1="_event: click; _target: #emergencyLight; intensity: 1;" event-set__2="_event: click; _target: #livingroomLight; intensity: 0;" position="0.148 2 7.408" scale="1 1 0" material="color:#ff0606"></a-box>
+    <a-box id="on" event-set__1="_event: click; _target: #emergencyLight; intensity:  0;"  event-set__2="_event: click; _target: #livingroomLight; intensity: 1;" position="2.342 2 7.41" scale="1 1 0" material="color:#0a941b"></a-box>
+
+-->
+</a-scene>
+</body>
+</html>
